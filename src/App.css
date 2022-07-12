@@ -25,7 +25,12 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #BA9C53;
+}
+
+.App-link:hover {
+  font-weight: 400;
+  color: #879492;
 }
 
 @keyframes App-logo-spin {
