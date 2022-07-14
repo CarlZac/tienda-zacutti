@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:ital,wght@0,300;0,600;1,300;1,800&display=swap");
+
 .App {
   text-align: center;
 }
@@ -31,6 +33,12 @@
 .App-link:hover {
   font-weight: 400;
   color: #879492;
+}
+
+.Title {
+  color: #FFFFF0;
+  font-family: 'Cinzel', serif;
+  text-shadow: 4px 4px 4px #242323;
 }
 
 @keyframes App-logo-spin {

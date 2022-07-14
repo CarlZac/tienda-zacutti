@@ -1,5 +1,6 @@
 import logoTripp from './logo-tripp.svg';
-import './Navbar.css'
+import './Navbar.css';
+import CartWidget from '../CartWidget/CartWidget';
 
 const Navbar = () =>{
     return (
@@ -22,6 +23,7 @@ const Navbar = () =>{
                     </li>
                 </ul>
             </div>
+            <CartWidget />
         </nav>
     )
 }

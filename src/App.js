@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
@@ -8,17 +9,13 @@ function App() {
       <header className="App-header">
         <Navbar />
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Let's drink some Mead!
-        </p>
-        <a
-          className="App-link"
-          href="https://carlzac.github.io/hidromiel-zacutti/index.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Skål!
-        </a>
+        <ItemListContainer 
+          intro="Let's drink some Mead!"
+          introClass="Title"
+          linkClass="App-link"
+          link="https://carlzac.github.io/hidromiel-zacutti/index.html"
+          message="Skål!"
+          />
       </header>
     </div>
   );
