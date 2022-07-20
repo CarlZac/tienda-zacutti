@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:ital,wght@0,300;0,600;1,300;1,800&display=swap");
+
+.count {
+    font-family: 'Cinzel', serif;
+    color: #BA9C53;
+    background-color: rgba(135, 148, 146, 0.2);
+    font-size: 2rem;
+    margin: 20px 0 0;
+}
+
+.countBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+    .countBtn button {
+        font-size: 1.3rem;
+        width: 50%;
+        background-color: #242323;
+        color: #BA9C53;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+    }
+
+        .countBtn button:hover {
+            background-color: #879492;
+            color: #242323;
+        }
+
+        .countBtn button[disabled] {
+            color: #879492;
+            background-color: rgba(36, 35, 35, 0.5);
+            cursor: auto;
+        }
+
+.countBtnAdd {
+    display: flex;
+    font-size: 1.1rem;
+    background-color: #242323;
+    color: #BA9C53;
+    font-family: 'Cinzel', serif;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 2px;
+    border: none;
+}
+
+    .countBtnAdd:hover {
+        background-color: #879492;
+        color: #242323;
+    }
+
+    .countBtnAdd[disabled] {
+        color: #879492;
+        background-color: rgba(36, 35, 35, 0.5);
+        cursor: auto;
+    }
