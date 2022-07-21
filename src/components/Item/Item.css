@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:ital,wght@0,300;0,600;1,300;1,800&display=swap");
+
+.font {
+    display: flex;
+    justify-content: center;
+}
+
+.combo {
+    padding: 20px 0 20px 0;
+    width: 70%;
+    flex-direction: column;
+}
+
+.card {
+    background-color: #242323;
+    color: #BA9C53;
+}
+
+    .card h2 {
+        font-family: 'Cinzel', serif;
+        margin: 10px 0;
+        padding: 20px 0;
+        font-size: 2rem;
+    }
+
+    .card img {
+        width: 70%;
+    }
+
+    .card p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.2rem;
+        padding-bottom: 20px;
+        margin-bottom: 0;
+    }

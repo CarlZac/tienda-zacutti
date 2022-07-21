@@ -5,7 +5,8 @@
     color: #BA9C53;
     background-color: rgba(135, 148, 146, 0.2);
     font-size: 2rem;
-    margin: 20px 0 0;
+    margin: 0;
+    padding-top: 5px;
 }
 
 .countBtn {
@@ -47,6 +48,8 @@
     cursor: pointer;
     margin-top: 2px;
     border: none;
+    width: 100%;
+    justify-content: center;
 }
 
     .countBtnAdd:hover {
