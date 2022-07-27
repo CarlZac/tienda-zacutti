@@ -6,8 +6,8 @@ const products = [
         img: "images/clasico.jpg",
         category: 'hidromiel',
         vol: 750,
-        stock: 60,
-        description: 'Descripción del estilo en cuestión.'
+        stock: 30,
+        description: 'A la vista presenta de un intenso color oro, posee una gran nitidez debido a una alta atenuación lograda mediante meses de madurado. Con aroma expresivo, asidrado y refrescante, se aprecia la complejidad de la miel. En boca es balanceado entre acaramelado, fresco y frutal. Extra dulce con cuerpo medio a bajo, graduación alcohólica de 14%.'
     },
     {
         id: '2',
@@ -35,6 +35,14 @@ export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products)
+        }, 2000)
+    })
+}
+
+export const getProduct = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products[0])
         }, 2000)
     })
 }

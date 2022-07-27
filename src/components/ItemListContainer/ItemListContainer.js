@@ -20,7 +20,7 @@ const ItemListContainer = (props) => {
         return (
             <div>
                 <img src={props.src} className={props.className} alt={props.alt}/>
-                <h1>Loading...</h1>
+                <h1 className="Title">Loading...</h1>
             </div>
             )
     }
