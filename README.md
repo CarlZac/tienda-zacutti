@@ -27,7 +27,7 @@ En el componente ItemListContainer están guardados las cards de los productos, 
 
 ## Flow de la App 
 
-![Alt text](https://giphy.com/embed/uUKEVMc3WoSBrnq3Ea)
+![Alt text](https://media.giphy.com/media/uUKEVMc3WoSBrnq3Ea/giphy.gif)
 
 ## Deployed App
 
