@@ -12,6 +12,8 @@
     margin-top: 15px;
     flex-direction: column;
     align-items: center;
+    border: solid 0.5px #BA9C53;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
 }
 
     .card h2 {
@@ -26,12 +28,12 @@
         margin-top: 0;
     }
 
-    .card button {
+    .btn {
         font-family: 'Cinzel', serif;
         background-color: #BA9C53;
         color: #242323;
         border: none;
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 600;
         margin: 25px 0;
         width: 70%;
@@ -39,16 +41,17 @@
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
         transition: all 0.3s ease 0s;
         cursor: pointer;
+        text-decoration: none;
     }
 
-    .card button:hover {
+    .btn:hover {
         background-color: #879492;
         color: #FFFFF0;
         box-shadow: 0px 8px 15px rgba(255, 255, 240, 0.1);
         transform: translateY(-3px);
     }
 
-    .card button:active {
+    .btn:active {
         transform: translateY(0);
         box-shadow: none;
         color: #BA9C53;

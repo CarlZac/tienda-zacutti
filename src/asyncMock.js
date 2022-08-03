@@ -3,7 +3,7 @@ const products = [
         id: '1',
         name: "Clásico",
         price: 1000,
-        img: "images/clasico.jpg",
+        img: "/images/clasico.jpg",
         category: 'hidromiel',
         vol: 750,
         stock: 30,
@@ -13,21 +13,21 @@ const products = [
         id: '2',
         name: "Brúnt",
         price: 1000,
-        img: "images/jegerarven-brunt.jpg",
+        img: "/images/jegerarven-brunt.jpg",
         category: 'aperitivo',
         vol: 750,
         stock: 30,
-        description: 'Descripción del estilo en cuestión.'
+        description: 'De un intenso color marrón oscuro. Con aroma herbal, maltoso y tostado, se aprecia la miel de fondo. En boca están muy presentes las hierbas, con notas anisadas, la malta tostada da una sensación a café mientras la miel la suaviza. Con cuerpo medio a bajo, graduación alcohólica de 14%. Podés tomarlo puro o diluirlo con lo que más te guste!'
     },
     {
         id: '3',
         name: "Idunn",
         price: 500,
-        img: "images/absenta.jpg",
+        img: "/images/absenta.jpg",
         category: 'licor',
         vol: 200,
         stock: 20,
-        description: 'Descripción del estilo en cuestión.'
+        description: 'El verde esmeralda es la principal característica de esta bebida. Su aroma es herbal, predominando especialmente el anís. En boca se funde el amargo del ajenjo con el dulzor de la miel y la frescura del resto de las hierbas, logrando un balance épico. Con cuerpo ligero, graduación alcohólica de 70%.'
     },
 ]
 
@@ -39,10 +39,18 @@ export const getProducts = () => {
     })
 }
 
-export const getProduct = () => {
+export const getProductById = (id) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(products[0])
-        }, 2000)
+            resolve(products.find(product => product.id === id))
+        }, 500)
+    })
+}
+
+export const getProductByCategory = (categoryId) => {
+    return new Promise (resolve => {
+        setTimeout(() => {
+            resolve(products.filter(prod => prod.category === categoryId))
+        }, 500)
     })
 }
