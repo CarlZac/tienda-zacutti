@@ -19,7 +19,7 @@ Las acciones que se pueden realizar en el simulador son las siguientes:
 - Framework: Create-React-App
 - Library: React-router-dom
 
-## Que se construyo?
+## Funcionamiento de la App
 
 Las categorías de los productos están linkeadas en el navbar para realizar el filtrado de los mismos según su categoría usando las rutas "/category/:categoryId". 
 
