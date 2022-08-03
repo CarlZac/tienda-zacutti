@@ -11,16 +11,6 @@
     border-radius: 15px;
 }
 
-.navbar div ul {
-    display:inline-block;
-}
-
-.navbar div ul li {
-    list-style: none;
-    float:left;
-    cursor: pointer;
-}
-
 .navLinks {
     color: #BA9C53;
     text-decoration: none;
