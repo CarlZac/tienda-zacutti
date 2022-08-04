@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getProductById } from "../../asyncMock";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from 'react-router-dom';
+import { CartContext } from "../../Contexts/CartContext";
+
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState()
@@ -15,7 +17,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div>
-      <ItemDetail {...product}/>
+      <ItemDetail {...product} />
     </div>
   )
 }
