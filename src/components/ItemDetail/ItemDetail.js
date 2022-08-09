@@ -12,7 +12,7 @@ const ItemDetail = ({ id, name, img, category, description, vol, price, stock })
     const quantityAdded = getProductQuantity(id);
 
     const handleOnAdd = (quantity) => {
-        console.log('Se agregaron ' + quantity + ' productos al Carrito!');
+        console.log('Se agregaron ' + quantity + ' de ' + name +' al Carrito!');
         setQuantity(quantity);
         addItem({ id, name, price, quantity})
     }

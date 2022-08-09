@@ -26,12 +26,12 @@ export const CartContextProvider = ({ children }) => {
     }
 
     const getQuantity = () => {
-        let accu = 0
+        let accu = 0;
         cart.forEach(prod => {
             accu += prod.quantity
-        })
+        });
 
-        return accu
+        return accu;
     }
 
     const isInCart = (id) => {
@@ -49,8 +49,11 @@ export const CartContextProvider = ({ children }) => {
 
     const getProductQuantity = (id) => {
         const product = cart.find(prod => prod.id === id)
-
-        return product?.quantity
+        if(product?.quantity == null || product?.quantity > 0) {
+            return 0
+        } else {
+            return product.quantity
+        }
     }
 
     return (
