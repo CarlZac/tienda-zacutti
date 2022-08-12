@@ -1,19 +1,30 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getProductById } from "../../asyncMock";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from 'react-router-dom';
-import { CartContext } from "../../Contexts/CartContext";
 
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = (props) => {
   const [product, setProduct] = useState()
   const { productId } = useParams()
+  const [ loading, setLoading ] = useState(true)
   
   useEffect(() => {
     getProductById(productId).then(response => {
       setProduct(response);
-    })
+    }).finally(() => {
+      setLoading(false);
+    });
   }, [productId])
+
+  if(loading) {
+    return (
+        <div>
+            <img src={props.src} className={props.className} alt={props.alt}/>
+            <h1 className="Title">Loading...</h1>
+        </div>
+        )
+}
 
   return (
     <div>

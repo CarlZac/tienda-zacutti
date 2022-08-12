@@ -21,7 +21,7 @@ const ItemDetail = ({ id, name, img, category, description, vol, price, stock })
         <div>
             <div className='font'>
                 <div className='cardDetail'>
-                    <img className='imgCard' src={img}/>
+                    <img className='imgCard' src={img} alt={name}/>
                     <div className=''>
                         <h2 className='title'>{name}</h2>
                         <p className='description'>{description}</p>

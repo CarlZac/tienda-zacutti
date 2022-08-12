@@ -5,6 +5,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartContextProvider } from './Contexts/CartContext';
+import CartContainer from './components/CartContainer/CartContainer';
 
 function App() {
   return (
@@ -17,9 +18,9 @@ function App() {
           <main className='Main'>
             <Routes>
               <Route path='/' element={<ItemListContainer intro="¡Bienvenido a la Tienda Hidromielera!" introClass="Title" src={logo} className="App-logo" alt="logo" />} />
-              <Route path='/category/:categoryId' element={<ItemListContainer intro="Resulado por Categoría:" introClass="Title" />} />
-              <Route path='/detail/:productId' element={<ItemDetailContainer />} />
-              <Route path='/cart' element={<h3>Cart</h3>}/>
+              <Route path='/category/:categoryId' element={<ItemListContainer introClass="Title" intro="Resulado por Categoría:" />} />
+              <Route path='/detail/:productId' element={<ItemDetailContainer introClass="Title" src={logo} className="App-logo" alt="logo" />} />
+              <Route path='/cart' element={<CartContainer />}/>
             </Routes>
           </main>
         </BrowserRouter>
