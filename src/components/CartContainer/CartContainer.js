@@ -18,7 +18,7 @@ const CartContainer = () => {
                     <img src='images/miel.png' className='imgMiel' alt='honey-spinner'/>
                     <img src='images/abeja.png' className='imgAbeja' alt='bee-spinner'/>
                 </div>
-                <Link className='btnCart' to='/'>Sumá los estilos que más te gusten!</Link>
+                <Link className='btnCart' to='/'>Ver Productos</Link>
             </div>
         )
     }
