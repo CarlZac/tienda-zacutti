@@ -1,12 +1,12 @@
 .cart {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    text-decoration: none;
-    color: #FFFFF0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-decoration: none;
+  color: #FFFFF0;
 }
 
 .cart img {
-    width: 30px;
-    margin: 0 15px 0 30px;
+  width: 30px;
+  margin: 0 15px 0 30px;
 }

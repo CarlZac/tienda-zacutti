@@ -1,30 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:ital,wght@0,300;0,600;1,300;1,800&display=swap");
 
 .navbar {
-    display: flex;
-    margin: 10px 30px 30px;
-    padding: 20px 30px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: #242323;
-    border-radius: 15px;
+  display: flex;
+  margin: 10px 30px 30px;
+  padding: 20px 30px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #242323;
+  border-radius: 15px;
 }
 
 .navLinks {
-    color: #BA9C53;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-family: 'Cinzel', serif;
-    margin: 0 30px;
+  color: #BA9C53;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: 'Cinzel', serif;
+  margin: 0 30px;
 }
 
-.navLinks:hover{
-    font-weight: 400;
-    color: #879492;
+.navLinks:hover {
+  font-weight: 400;
+  color: #879492;
 }
 
 .logoTripp {
-    width: 100%;
-    margin-right: 20px;
+  width: 100%;
+  margin-right: 20px;
 }

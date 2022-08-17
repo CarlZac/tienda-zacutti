@@ -1,106 +1,108 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:ital,wght@0,300;0,600;1,300;1,800&display=swap");
 
 .cartContainerGeneral {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .titleNoProd {
-    font-size: 1.3rem;
-    color: #BA9C53;
-    font-family: 'Cinzel', serif;
-    text-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  font-size: 1.3rem;
+  color: #BA9C53;
+  font-family: 'Cinzel', serif;
+  text-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
 }
 
 .titleProd {
-    font-size: 1.3rem;
-    color: #BA9C53;
-    font-family: 'Cinzel', serif;
-    text-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  font-size: 1.3rem;
+  color: #BA9C53;
+  font-family: 'Cinzel', serif;
+  text-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
 }
 
 .total {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .total {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    color: #879492;
-    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #879492;
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
 }
 
 .btnCart {
-    font-family: 'Cinzel', serif;
-    background-color: #BA9C53;
-    color: #242323;
-    border: none;
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 25px 5px;
-    width: 15%;
-    border-radius: 10px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    text-decoration: none;
+  font-family: 'Cinzel', serif;
+  background-color: #BA9C53;
+  color: #242323;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 25px 5px;
+  width: 15%;
+  border-radius: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .btnCart:hover {
-    background-color: #879492;
-    color: #FFFFF0;
-    box-shadow: 0px 8px 15px rgba(255, 255, 240, 0.1);
-    transform: translateY(-3px);
+  background-color: #879492;
+  color: #FFFFF0;
+  box-shadow: 0px 8px 15px rgba(255, 255, 240, 0.1);
+  transform: translateY(-3px);
 }
 
 .btnCart:active {
-    transform: translateY(0);
-    box-shadow: none;
-    color: #BA9C53;
-    background-color: #7c8583;
-    transition: all 0.2s ease 0s;
+  transform: translateY(0);
+  box-shadow: none;
+  color: #BA9C53;
+  background-color: #7c8583;
+  transition: all 0.2s ease 0s;
 }
 
 .animation {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imgMiel {
-    position: absolute;
-        animation: honey-spin infinite 7s linear;
-        width: 150px;
-        z-index: 1;
-    }
+  position: absolute;
+  animation: honey-spin infinite 7s linear;
+  width: 150px;
+  z-index: 1;
+}
 
 
 .imgAbeja {
-    padding: 5px 0 5px 0;
-    position: absolute;
-    animation: bee-spin infinite 2s linear;
-    width: 80px;
-    z-index: 2;
+  padding: 5px 0 5px 0;
+  position: absolute;
+  animation: bee-spin infinite 2s linear;
+  width: 80px;
+  z-index: 2;
 }
 
 @keyframes bee-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes honey-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(-360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
 }
