@@ -1,34 +1,16 @@
-import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 
 import { useParams } from 'react-router-dom';
-import { getDocs, collection, query, where } from "firebase/firestore";
-import { dataBase } from "../../services/firebase";
+import { useAsyncFn } from "../../hooks/useAsync";
+import { fetcher } from "../../utils/fetcher";
+import { getProducts } from "../../services/firebase/firestore";
 
 const ItemListContainer = (props) => {
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
   const { categoryId } = useParams()
 
-  useEffect(() => {
-    setLoading(true);
-    const collectionReference = !categoryId
-      ? collection(dataBase, 'products')
-      : query(collection(dataBase, 'products'), where('category', '==', categoryId));
+  const { isLoading, data, error } = useAsyncFn(fetcher(getProducts, categoryId), [categoryId])
 
-    getDocs(collectionReference).then(res => {
-      const prod = res.docs.map(doc => {
-        return { id: doc.id, ...doc.data() }
-      })
-      setProducts(prod);
-    }).catch(error => {
-      console.log(error);
-    }).finally(() => {
-      setLoading(false);
-    })
-  }, [categoryId])
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div>
         <img src={props.src} className={props.className} alt={props.alt} />
@@ -37,10 +19,14 @@ const ItemListContainer = (props) => {
     )
   }
 
+  if(error) {
+    return <h1>Error</h1>
+  }
+
   return (
     <div>
       <h1 className={props.introClass}>{props.intro}</h1>
-      <ItemList products={products} />
+      <ItemList products={data} />
     </div>
   )
 }

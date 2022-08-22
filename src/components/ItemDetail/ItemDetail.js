@@ -7,12 +7,12 @@ import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ id, name, img, category, description, vol, price, stock }) => {
   const [quantity, setQuantity] = useState(0);
-  const { addItem, getProductQuantity } = useContext(CartContext);
+  const { addProduct, getProductQuantity } = useContext(CartContext);
   const quantityAdded = getProductQuantity(id);
+
   const handleOnAdd = (quantity) => {
-    console.log('Se agregaron ' + quantity + ' de ' + name + ' al Carrito!');
     setQuantity(quantity);
-    addItem({ id, name, price, quantity })
+    addProduct({ id, name, price, quantity })
   }
 
   return (
@@ -20,7 +20,7 @@ const ItemDetail = ({ id, name, img, category, description, vol, price, stock })
       <div className='font'>
         <div className='cardDetail'>
           <img className='imgCard' src={img} alt={name} />
-          <div className=''>
+          <div>
             <h2 className='title'>{name}</h2>
             <p className='description'>{description}</p>
           </div>

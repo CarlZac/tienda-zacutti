@@ -1,38 +1,31 @@
-import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { useAsyncFn } from "../../hooks/useAsync";
+import { fetcher } from "../../utils/fetcher";
 
 import { useParams } from 'react-router-dom';
-import { getDoc, doc } from "firebase/firestore";
-import { dataBase } from "../../services/firebase";
+import { getProductById } from "../../services/firebase/firestore";
 
 const ItemDetailContainer = (props) => {
-  const [product, setProduct] = useState()
   const { productId } = useParams()
-  const [ loading, setLoading ] = useState(true)
-  
-  useEffect(() => {
-    getDoc(doc(dataBase, 'products', productId)).then(res => {
-      const prod = { id: res.id, ...res.data()}
-      setProduct(prod);
-    }).catch(error => {
-      console.log(error);
-    }).finally(() => {
-      setLoading(false);
-    });
-  }, [productId])
 
-  if(loading) {
+  const { isLoading, data, error } = useAsyncFn(fetcher(getProductById, productId), [productId])
+
+  if (isLoading) {
     return (
-        <div>
-            <img src={props.src} className={props.className} alt={props.alt}/>
-            <h1 className="Title">Loading...</h1>
-        </div>
-        )
-}
+      <div>
+        <img src={props.src} className={props.className} alt={props.alt} />
+        <h1 className="Title">Loading...</h1>
+      </div>
+    )
+  }
+
+  if (error) {
+    return <h1>Error</h1>
+  }
 
   return (
     <div>
-      <ItemDetail {...product} />
+      <ItemDetail {...data} />
     </div>
   )
 }

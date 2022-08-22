@@ -4,60 +4,61 @@ export const CartContext = createContext()
 
 export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([])
-  const addItem = (productToAdd) => {
+
+  const addProduct = (productToAdd) => {
     if (!isInCart(productToAdd.id)) {
       setCart([...cart, productToAdd])
     } else {
-      const cartUpdated = cart.map(prod => {
-        if (prod.id === productToAdd.id) {
-          const productUpdated = {
-            ...prod,
+      const newCartState = cart.map(product => {
+        if (product.id === productToAdd.id) {
+          const newProduct = {
+            ...product,
             quantity: productToAdd.quantity
           }
-          return productUpdated
+          return newProduct
         } else {
-          return prod
+          return product
         }
       })
-      setCart(cartUpdated)
+      setCart(newCartState)
     }
   }
+
+  const isInCart = (id) => {
+    return cart.some(product => product.id === id)
+  }
+
+  const removeProduct = (id) => {
+    const newCartState = cart.filter(product => product.id !== id)
+    setCart(newCartState)
+  }
+
   const getQuantity = () => {
     let accu = 0;
-    cart.forEach(prod => {
-      accu += prod.quantity
+    cart.forEach(product => {
+      accu += product.quantity
     });
-
+    
     return accu;
   }
-  const isInCart = (id) => {
-    return cart.some(prod => prod.id === id)
-  }
-  const removeItem = (id) => {
-    const cartWithoutItem = cart.filter(prod => prod.id !== id)
-    setCart(cartWithoutItem)
-  }
-  const clearCart = () => {
-    setCart([])
-  }
+
   const getProductQuantity = (id) => {
-    const product = cart.find(prod => prod.id === id)
+    const product = cart.find(product => product.id === id)
     if (product?.quantity === undefined || product?.quantity < 0) {
       return 0
     } else {
       return product.quantity
     }
   }
-  const getFinalPrice = () => {
-    let accu = 0
-    cart.forEach(prod => {
-      accu += prod.quantity * prod.price
-    })
-    return accu
+
+  const resetCart = () => {
+    setCart([])
   }
 
+  const getFinalPrice = () => cart.reduce((finalPrice, product) => (finalPrice += product.quantity * product.price), 0);
+
   return (
-    <CartContext.Provider value={{ cart, addItem, isInCart, removeItem, clearCart, getQuantity, getProductQuantity, getFinalPrice }}>
+    <CartContext.Provider value={{ cart, addProduct, isInCart, removeProduct, resetCart, getQuantity, getProductQuantity, getFinalPrice }}>
       {children}
     </CartContext.Provider>
   )

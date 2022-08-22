@@ -3,9 +3,9 @@ import { CartContext } from '../../Contexts/CartContext';
 import './CartItem.css';
 
 const CartItem = ({ product }) => {
-  const { removeItem } = useContext(CartContext)
+  const { removeProduct } = useContext(CartContext)
   const remove = (id) => {
-    removeItem(id)
+    removeProduct(id)
   }
   
   return (

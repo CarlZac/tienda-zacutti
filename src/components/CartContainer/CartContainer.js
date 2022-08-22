@@ -6,7 +6,7 @@ import Cart from '../Cart/Cart'
 import { Link } from 'react-router-dom';
 
 const CartContainer = () => {
-  const { cart, getQuantity, getFinalPrice, clearCart } = useContext(CartContext)
+  const { cart, getQuantity, getFinalPrice, resetCart } = useContext(CartContext)
   const totalQuantity = getQuantity()
   const total = getFinalPrice()
 
@@ -31,8 +31,8 @@ const CartContainer = () => {
       </div>
       <h3 className='total'>Total Carrito: ${total}</h3>
       <div>
-        <button className='btnCart' onClick={() => clearCart()}>Limpiar Carrito</button>
-        <button className='btnCart'>Comprar</button>
+        <button className='btnCart' onClick={() => resetCart()}>Limpiar Carrito</button>
+        <Link to='/order' className='btnCart'>Comprar</Link>
       </div>
     </div>
   )
