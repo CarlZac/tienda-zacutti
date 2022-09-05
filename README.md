@@ -58,7 +58,7 @@ En el componente ItemListContainer están guardados las cards de los productos, 
 
 ## Flow de la App 
 
-![Alt text](trippelcommerce.gif)
+![Alt text](![trippelcommerce](https://user-images.githubusercontent.com/102038194/188495942-0edbf91c-c076-4008-8f88-1169c19431d2.gif))
 
 ## Deployed App
 
