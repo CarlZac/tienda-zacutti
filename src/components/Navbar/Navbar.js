@@ -1,6 +1,6 @@
 import './Navbar.css';
 import CartWidget from '../CartWidget/CartWidget';
-import NavCategory from '../NavLink/NavCategory';
+import NavCategory from '../NavCategory/NavCategory';
 import { useAsyncFn } from "../../hooks/useAsync";
 
 import { fetcher } from "../../utils/fetcher";
