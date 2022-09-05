@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
@@ -19,9 +18,9 @@ function App() {
           </header>
           <main className='Main'>
             <Routes>
-              <Route path='/' element={<ItemListContainer intro="¡Bienvenido a la Tienda Hidromielera!" introClass="Title" src={logo} className="App-logo" alt="logo" />} />
+              <Route path='/' element={<ItemListContainer intro="¡Bienvenido a la Tienda Hidromielera!" introClass="Title" src='/images/logo.svg' className="App-logo" alt="logo" />} />
               <Route path='/category/:categoryId' element={<ItemListContainer introClass="Title" intro="Resulado por Categoría:" />} />
-              <Route path='/detail/:productId' element={<ItemDetailContainer introClass="Title" src={logo} className="App-logo" alt="logo" />} />
+              <Route path='/detail/:productId' element={<ItemDetailContainer introClass="Title" src='/images/logo.svg' className="App-logo" alt="logo" />} />
               <Route path='/cart' element={<CartContainer />} />
               <Route path='/order' element={<Form />} />
             </Routes>

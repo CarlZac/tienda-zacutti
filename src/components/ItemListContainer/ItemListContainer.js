@@ -20,7 +20,7 @@ const ItemListContainer = (props) => {
   }
 
   if(error) {
-    return <h1>Error</h1>
+    return <img src='/image/error-404.png' alt="error"/>
   }
 
   return (

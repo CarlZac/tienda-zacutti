@@ -1,21 +1,40 @@
-import logoTripp from './logo-tripp.svg';
 import './Navbar.css';
 import CartWidget from '../CartWidget/CartWidget';
+import NavCategory from '../NavLink/NavCategory';
+import { useAsyncFn } from "../../hooks/useAsync";
 
+import { fetcher } from "../../utils/fetcher";
+import { getProducts } from "../../services/firebase/firestore";
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+  const { isLoading, data, error } = useAsyncFn(fetcher(getProducts));
+
+  if (isLoading) {
+    return (
+      <div>
+        <div className='animation'>
+          <img src='images/abeja.png' className='imgAbejaNav' alt='bee-spinner-navbar' />
+        </div>
+      </div>
+    )
+  }
+
+  if(error) {
+    return <img src='/image/error-404.png' alt='error'/>
+  }
+  
   return (
     <nav className='navbar'>
       <div>
         <Link to='/'>
-          <img src={logoTripp} className='logoTripp' alt='logo Trippelheim' />
+          <img src='/images/logotripp.svg' className='logoTripp' alt='logo Trippelheim' />
         </Link>
       </div>
       <div>
-        <Link className='navLinks' to='/category/hidromiel'>Hidromieles</Link>
-        <Link className='navLinks' to='/category/aperitivo'>Aperitivos</Link>
-        <Link className='navLinks' to='/category/licor'>Licores</Link>
+        {Array.from(new Set(data.map(product => product.category))).map(product => (
+          <NavCategory key={product} category={product} />
+        ))}
       </div>
       <CartWidget />
     </nav>

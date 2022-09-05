@@ -14,7 +14,7 @@ const Form = () => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [cel, setCel] = useState();
+  const [cel, setCel] = useState('');
 
   const { cart, getFinalPrice, resetCart } = useContext(CartContext)
   const total = getFinalPrice()
@@ -120,7 +120,7 @@ const Form = () => {
             <input type="email" id="email" className="formInput" required="email" value={email} onInput={(evt) => setEmail(evt.target.value)} />
           </div>
           <div className="form">
-            <label htmlFor="phone" className="formLabel">Phone</label>
+            <label htmlFor="phone" className="formLabel">WhatsApp</label>
             <input type="phone" id="phone" className="formInput" required="tel" value={cel} onInput={(evt) => setCel(evt.target.value)} />
           </div>
           <div>

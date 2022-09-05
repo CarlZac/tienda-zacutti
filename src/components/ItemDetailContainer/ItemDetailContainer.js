@@ -19,8 +19,8 @@ const ItemDetailContainer = (props) => {
     )
   }
 
-  if (error) {
-    return <h1>Error</h1>
+  if(error) {
+    return <img src='/image/error-404.png' alt="error"/>
   }
 
   return (
